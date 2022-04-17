@@ -1,5 +1,8 @@
 {
-  "item.mccourse.cobalt_ingot" : "Cobalt Ingot"
+  "item.mccourse.testing_ingot" : "Testing Ingot",
+  "item.mccourse.blue_testing_ingot" : "Blue Testing Ingot",
+
+  "block.mccourse.cobalt_block" : "Cobalt Block"
 
 
 

@@ -1,6 +1,7 @@
-package com.Azyrix.dragon;
+package com.Azyrix.mccourse;
 
-import com.Azyrix.dragon.Item.ModItems;
+import com.Azyrix.mccourse.item.ModItems;
+import com.Azyrix.mccourse.block.ModBlocks;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -15,22 +16,19 @@ import org.apache.logging.log4j.Logger;
 public class MCCourseMod
 {
     public static final String MOD_ID = "mccourse";
-
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
-
-    ;
-
     public MCCourseMod() {
         // Register the setup method for modloading
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
 
+        eventBus.addListener(this::setup);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
-
     private void setup(final FMLCommonSetupEvent event)
     {
         // some preinit code
